@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <link rel="icon" href="">
+        <link rel="stylesheet" href="" />
+        <style>
+            table, td{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            td{
+                padding: 3px;
+            }
+            .red{
+                background-color:rgb(255, 126, 126)
+            }
+            .green{
+                background-color:rgb(124, 188, 128)
+            }
+            body{
+                font-family: Arial;
+            }
+            tr:nth-child(2n){
+                background-color:#e0e0e0;
+            }
+        </style>
+        <script src="https://github.com/rappelmann/KanaToRomajiConverter/blob/b03d5658b99433415b3d237a956e3b598ca68cb4/KanaToRomajiConverter.js"></script> 
+        <script>
+            let converter000 = new KanaToRomajiConverter(false,false,false)
+            let converter001 = new KanaToRomajiConverter(false,false,true)
+            let converter010 = new KanaToRomajiConverter(false,true,false)
+            let converter011 = new KanaToRomajiConverter(false,true,true)
+            let converter100 = new KanaToRomajiConverter(true,false,false)
+            let converter101 = new KanaToRomajiConverter(true,false,true)
+            let converter110 = new KanaToRomajiConverter(true,true,false)
+            let converter111 = new KanaToRomajiConverter(true,true,true)
+
+            converterArray=[converter000,converter001,converter010,converter011,converter100,converter101,converter110,converter111]
+
+            function addRow(wordInKana){
+                let newRow = document.createElement("tr")
+                let japaneseRowEntry = document.createElement("td")
+                japaneseRowEntry.innerHTML=wordInKana
+                newRow.appendChild(japaneseRowEntry)
+                converterArray.forEach(converter => {
+                    let newEntry = document.createElement("td")
+                    newEntry.innerHTML=converter.kanaToRomaji(wordInKana)
+                    newRow.appendChild(newEntry)
+                });
+                document.getElementById("exampleTable").appendChild(newRow)
+            }
+            
+            function addExamples(){
+                examples = [
+                    "しんばし",
+                    "しんいち",
+                    "ウォーカー",
+                    "きんようび",
+                    "きにゅう",
+                    "けんたろう",
+                    "いとう",
+                    "しんや",
+                    "てんぷら",
+                    "ホラーゲーム",
+                    "ほうりゅうじ",
+                    "せんぱい",
+                    "おかあさん",
+                    "とおる",
+                ]
+                examples.forEach(example => addRow(example))
+            }
+
+            function clickPress(event) {
+                if (event.keyCode == 13) {
+                    addExampleFromTextBox()
+                }
+            }
+
+            function addExampleFromTextBox(){
+                addRow(document.getElementById('input').value)
+            }
+        </script>
+    </head>
+
+    <body onload="addExamples()">
+        <div class="wrapper">
+            <table id="exampleTable">
+                <tr>
+                    <td>Separate ambiguous N with Apaostrophe:</td>
+                    <td class="red">False</td>
+                    <td class="red">False</td>
+                    <td class="red">False</td>
+                    <td class="red">False</td>
+                    <td class="green">True</td>
+                    <td class="green">True</td>
+                    <td class="green">True</td>
+                    <td class="green">True</td>
+                </tr>
+                <tr>
+                    <td>Use Diacritics for long Vowels:</td>
+                    <td class="red">False</td>
+                    <td class="red">False</td>
+                    <td class="green">True</td>
+                    <td class="green">True</td>
+                    <td class="red">False</td>
+                    <td class="red">False</td>
+                    <td class="green">True</td>
+                    <td class="green">True</td>
+                </tr>
+                <tr>
+                    <td>Replace N with M if Appropriate:</td>
+                    <td class="red">False</td>
+                    <td class="green">True</td>
+                    <td class="red">False</td>
+                    <td class="green">True</td>
+                    <td class="red">False</td>
+                    <td class="green">True</td>
+                    <td class="red">False</td>
+                    <td class="green">True</td>
+                </tr>
+            </table>
+            <div class="inputPanel">
+                <h1>Try it Yourself</h1>
+                <input type="text" id="input" onkeypress="clickPress(event)">
+                <button onclick="addExampleFromTextBox()">Add to Table</button>
+            </div>
+        </div>
+    </body>
+
+</html> 
