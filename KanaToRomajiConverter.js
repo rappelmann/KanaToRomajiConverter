@@ -154,7 +154,7 @@ class KanaToRomajiConverter{
     nRuleWithApostopheLongUO = [['んゆう',"n'yu"],['ンユウ',"n'yu"],['んよう',"n'yo"],['ンヨウ',"n'yo"]]
     nRuleWithApostopheLongUODiacritics = [['んゆう',"n'yū"],['ンユウ',"n'yū"],['んよう',"n'yō"],['ンヨウ',"n'yō"]]
 
-    constructor(separateAmbiguousNWithApaostrophe, useDiacriticsForLongVowels, replaceNWithMIfAppropriate){
+    constructor(separateAmbiguousNWithApostrophe, useDiacriticsForLongVowels, replaceNWithMIfAppropriate){
         this.useDiacriticsForLongVowels = useDiacriticsForLongVowels
         if(useDiacriticsForLongVowels){
             if(replaceNWithMIfAppropriate){
@@ -164,7 +164,7 @@ class KanaToRomajiConverter{
             }
             this.addToKanaArray(this.tripleKanaLongUODiacritics)
             this.addToKanaArray(this.tripleKana)
-            if(separateAmbiguousNWithApaostrophe){
+            if(separateAmbiguousNWithApostrophe){
                 this.addToKanaArray(this.nRuleWithApostopheLongUODiacritics)
                 this.addToKanaArray(this.nRuleWithApostrophe)
             }
@@ -181,7 +181,7 @@ class KanaToRomajiConverter{
             }
             this.addToKanaArray(this.tripleKanaLongUO)
             this.addToKanaArray(this.tripleKana)
-            if(separateAmbiguousNWithApaostrophe){
+            if(separateAmbiguousNWithApostrophe){
                 this.addToKanaArray(this.nRuleWithApostopheLongUO)
                 this.addToKanaArray(this.nRuleWithApostrophe)
             }
