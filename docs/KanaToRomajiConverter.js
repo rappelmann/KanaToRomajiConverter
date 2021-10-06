@@ -150,9 +150,12 @@ class KanaToRomajiConverter{
     ['ル゜ウ','lū'],['ロ゜ウ','lō']]
 
     //N with Apostrophe Rule
-    nRuleWithApostrophe = [['んや',"n'ya"],['ンヤ',"n'ya"],['んゆ',"n'yu"],['ンユ',"n'yu"],['んよ　ンヨ',"n'yo"]]
-    nRuleWithApostopheLongUO = [['んゆう',"n'yu"],['ンユウ',"n'yu"],['んよう',"n'yo"],['ンヨウ',"n'yo"]]
-    nRuleWithApostopheLongUODiacritics = [['んゆう',"n'yū"],['ンユウ',"n'yū"],['んよう',"n'yō"],['ンヨウ',"n'yō"]]
+    nRuleWithApostrophe = [['んや',"n'ya"],['ンヤ',"n'ya"],['んゆ',"n'yu"],['ンユ',"n'yu"],['んよ',"n'yo"],['ンヨ',"n'yo"],
+    ['んあ',"n'a"],['ンア',"n'a"],['んい',"n'i"],['ンイ',"n'i"],['んう',"n'u"],['ンウ',"n'u"],['んえ',"n'e"],['ンエ',"n'e"],['んお',"n'o"],['ンオ',"n'o"]]
+    nRuleWithApostopheLongUO = [['んゆう',"n'yu"],['ンユウ',"n'yu"],['んよう',"n'yo"],['ンヨウ',"n'yo"],
+    ['んうう',"n'u"],['ンウウ',"n'u"],['んおう',"n'o"],['ンオウ',"n'o"]]
+    nRuleWithApostopheLongUODiacritics = [['んゆう',"n'yū"],['ンユウ',"n'yū"],['んよう',"n'yō"],['ンヨウ',"n'yō"],
+    ['んうう',"n'ū"],['ンウウ',"n'ū"],['んおう',"n'ō"],['ンオウ',"n'ō"]]
 
     constructor(separateAmbiguousNWithApostrophe, useDiacriticsForLongVowels, replaceNWithMIfAppropriate){
         this.useDiacriticsForLongVowels = useDiacriticsForLongVowels
