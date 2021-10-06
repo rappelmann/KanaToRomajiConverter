@@ -1,6 +1,9 @@
 # Kana to Romaji Converter
 A (naive) JavaScript Class for converting texts written in just Hiragana and Katakana into Romaji.
 
+## Demo
+You can find a demo page [here](https://rappelmann.github.io/KanaToRomajiConverter/KanaToRomajiConverterDemo.html)
+
 ## How does it work?
 The script adds Kana combinations form four- to three- to two- to one-character combinations to an array and then replaces the Kana in the string given to the kanaToRomaji function in that order.
 Long vowels are also handled this way, instead of going through the resulting Romaji again and replacing double vowels/ou because in my original use case, there were some Romaji mixed in the Katakana I had to convert.
