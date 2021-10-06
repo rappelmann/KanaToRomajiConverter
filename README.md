@@ -1,5 +1,5 @@
 # Kana to Romaji Converter
-A (naive) JavaScript Class for converting texts written in just Hiragana and Katakana into Romaji.
+A (naive) JavaScript Class for converting texts written in just Hiragana and Katakana into latin script (Romaji).
 
 ## Demo
 You can find a demo page [here](https://rappelmann.github.io/KanaToRomajiConverter/KanaToRomajiConverterDemo.html)
